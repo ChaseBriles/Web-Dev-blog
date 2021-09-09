@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog #2 Sept 9th</title>
+    <style>
+
+.typewriter {
+    font-family: Courier, monospace;
+	display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 5s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight: 700;
+    border-right: 4px solid orange;
+    box-sizing: border-box;
+}
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 100% 
+    }
+}
+
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: orange; 
+    }
+}
+
+    </style>
+</head>
+
+<body>
+<h1>Animation-timing-function and Type Writer CSS effect</h1>
+<p>
+    For this blog I wanted to expore what else CSS could actually do within the realm of adding flair to a web page. After a bit a searching I found that 
+    there was a way to make it look like a type writer was going off in the web page. I found this quite cool and decided to look further into it. To actually
+     make this animation work takes a few differnt moving parts. Sush as getting a correct front, the page I looked at recommended any monospace font due to how 
+     the animation-timing-function worked which is the main work horse for this to work which is the coolest part of this animation. The other key part of the animation
+     is to create a cursor effect that is just a simple manipluation of the border color which is set from transparent to 50% to give it a blinking effect.
+</p>
+
+<p>
+   The animation-timing-function is really cool in which it does pretty much what it says, it sets up timing for a desired animation and is normally used as a short hand
+   for transistions within a web page. There are multiple different uses
+   for this function, there is linear which makes it a nice smooth animation, as well as ease-in-out where it makes the animation and slower start and stop for a cool effect,
+   you can actually set steps to make the animation a bit more chunky, which is another key element to make the type writting animation, and finally the cubic-bezier function
+   which has a whole bunch of differnt uses.
+</p>
+
+<h2>Type Writer animation</h2>
+<p>
+    <div class="typewriter">
+        <div class="typewriter-text">Twinkle, twinkle, little star.</div>
+    </div>
+</p>
+
+<h3>Links to Articles</h3>
+<p><a href="https://css-tricks.com/snippets/css/typewriter-effect/">Type Writer Effect from CSS-tricks.com</a></p>
+<p><a href="https://usefulangle.com/post/85/css-typewriter-animation">Type Writer animation tutorial from usefulangle.com</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function">animation-timing-function MDN</a></p>
+</body>
+</html>

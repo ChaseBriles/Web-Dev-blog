@@ -2,18 +2,18 @@
 <html>
     <head>
         <title>Blog 3: Button Effects</title>
-        <style>
-          .glow-on-hover {
+    <style>
+    .glow-on-hover {
     width: 220px;
     height: 50px;
     border: none;
     outline: none;
-    color: #fff;
+    color: rgb(0, 0, 0);
     background: #111;
     cursor: pointer;
     position: relative;
     z-index: 0;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .glow-on-hover:before {
@@ -42,7 +42,7 @@
 }
 
 .glow-on-hover:hover:before {
-    opacity: 1;
+    opacity: 0;
 }
 
 .glow-on-hover:after {
@@ -65,9 +65,19 @@
         </style>
     </head>
     <body>
+        <h1>Blog 3: Glowing Button</h1>
         <p>For this weeks blog I wanted to see what other elements there were in CSS and HTML. So I decided to look at other aspects that we haven't seen yet in class.
          So, I decided to take a look at what could be done with buttons since they are a very important part of any website we go to. After looking for a while I found
-         a way to get a buttons border to be high lighted. 
+         a way to get a buttons border to be high lighted and show differnt colors when hovered over.
+        </p>
+
+        <p>There are a couple of key aspects to making this button work, there is the actual animation that takes place in the key frames to create the glowing effect with
+            they background position moving from 0% to 100% after activation to give the idea that it is fading in. The next aspect of button that makes it work are the classes
+            that pertain to glow on hover. The first is the actual base which sets up the actual size of the box along with the border that will actually be highlighted later on.
+            The next is the before class which sets up the colors along with the actual movement of the border, calc is used to change the size of the button along with the opacity
+            of the animation, since it is before it is set completely opaque. The rest of the classes are set up for after the actual action has taken place, they key one is to
+            make the animation go away after the hover.
+            
         </p>
 
         <p><button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button></p>

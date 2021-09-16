@@ -39,8 +39,8 @@
 }
 
 .glow-on-hover:active:after {
-
-    /*background: transparent;*/
+    /*allows for black background to disapear*/
+    background: transparent;
 }
 
 .glow-on-hover:hover:before {
@@ -61,7 +61,7 @@
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
+    10% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
@@ -78,8 +78,7 @@
             they background position moving from 0% to 100% after activation to give the idea that it is fading in. The next aspect of button that makes it work are the classes
             that pertain to glow on hover. The first is the actual base which sets up the actual size of the box along with the border that will actually be highlighted later on.
             The next is the before class which sets up the colors along with the actual movement of the border, calc is used to change the size of the button along with the opacity
-            of the animation. 
-            
+            of the animation. The other methods are for the activation of the button the main gist of them are mostly so the black background disappears on activation and comes back after words.
         </p>
 
         <p><button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button></p>

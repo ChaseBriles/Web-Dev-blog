@@ -71,7 +71,8 @@
         <h1>Blog 3: Glowing Button</h1>
         <p>For this weeks blog I wanted to see what other elements there were in CSS and HTML. So I decided to look at other aspects that we haven't seen yet in class.
          So, I decided to take a look at what could be done with buttons since they are a very important part of any website we go to. After looking for a while I found
-         a way to get a buttons border to be high lighted and show differnt colors when hovered over.
+         a way to get a buttons border to be high lighted and show differnt colors when hovered over. The colors for the button come from the linear-gradient variable
+         that CSS has along with a mixure of colors that closely resembles the rainbow or any other colors that some one would desire.
         </p>
 
         <p>There are a couple of key aspects to making this button work, there is the actual animation that takes place in the key frames to create the glowing effect with
@@ -80,7 +81,74 @@
             The next is the before class which sets up the colors along with the actual movement of the border, calc is used to change the size of the button along with the opacity
             of the animation. The other methods are for the activation of the button the main gist of them are mostly so the black background disappears on activation and comes back after words.
         </p>
+     
+        <h2>Button Code</h2>
+        <p><pre>.glow-on-hover {
+            width: 220px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: rgb(0, 0, 0);
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 30px;
+        }
+        
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left:-2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+        
+        .glow-on-hover:active {
+            /*Keeps text color Black on activation*/
+            color: rgb(0, 0, 0);
+        }
+        
+        .glow-on-hover:active:after {
+            /*allows for black background to disapear*/
+            background: transparent;
+        }
+        
+        .glow-on-hover:hover:before {
+            /* allows for full rainbow button to show */
+            opacity: 1;
+        }
+        
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+        
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }</pre></p>
 
-        <p><button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button></p>
+        <p><button class="glow-on-hover" type="button">SUPER FUN PARTY BUTTON!</button></p>
+
+        <h3>Links of Sources</h3>
+        <p><a href="https://webdeasy.de/en/top-css-buttons-en/">Type Writer Effect from CSS-tricks.com</a></p>
     </body>
 </html>

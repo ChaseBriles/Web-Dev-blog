@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog4:CSS filters</title>
+    <style>
+        #example{
+            display:flex;
+            flex-direction:row;
+        }
+
+        #blur{
+            filter:blur(5px);
+        }
+
+        #invert{
+            filter:invert(100%);
+        }
+
+        #rotation{
+            filter:hue-rotate(50deg);
+        }
+
+        #shadow{
+            filter:drop-shadow(20px 20px 5px black);
+        }
+
+    </style>
+</head>
+
+<body>
+<h1>CSS Filters</h1>
+<p>Filters in CSS are very interesting and extremly useful to create a more dynamic and interesting webpage. There are multiple ways to have filters effects added on to a
+    image with CSS. The first one is that CSS comes onboard with the "Filter" property. With this there are multiple different aspects that you can add to the image like 
+    adding an amount of blur to distort the image, adding gray to the image, changing the color contrast on the image to make it more vibrant or dim, or even adding a drop shadow
+    effect to the image. You can also combine these effects to create differnt types of like making to images look gooey using differnt values in contrast and blur to make them overlap
+    and make them look like they a gooey or at least warped togeather.
+</p>
+<p>
+    The other way to get filters in css is to import them using SVG links. SVG filters can be extremly handy since they give a much wider range of what can be done with the filters. There are a lot
+    more vairables to change using SVG like for blur you can also change the width, height, x positioning, and y positioning. However, since there are so many differnt browers and there are always
+    issues with what is actually supported in CSS, SVG filters are no differnt. At this point only SVG element filters work in Firefox and Firefox for android, however all other browers support the
+    normal filter properties that come along with CSS except for some versions of Internet Explorer.
+</p>
+<h2>Image Filters:Original, Blurred, Inverted Color, Hue Rotation, Drop shadow</h2>
+<div class="example">
+    <img src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg" alt="Example Picture" height="170vh">
+    <img id="blur" src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg" alt="Example Picture blur" height="170vh">
+    <img id="invert" src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg" alt="Example Picture invert" height="170vh">
+    <img id="rotation" src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg" alt="Example Picture rotation" height="170vh">
+    <img id="shadow" src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg" alt="Example Picture shadow" height="170vh">
+</div>
+
+</body>
+</html>

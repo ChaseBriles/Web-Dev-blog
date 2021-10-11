@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <title>Blog 5: JavaScript Animation</title> 
+        
+        <style>
+             
+            
+
+
+        </style>
+
+
+        <script type = "text/javascript">
+              var imgObj = null;
+              var animate ;
+              
+              function init() {
+                 imgObj = document.getElementById('myImage');
+                 imgObj.style.position= 'relative'; 
+                 imgObj.style.left = '500px'; 
+              }
+              function moveRight() {
+                 imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+                 animate = setTimeout(moveRight,20);    // call moveRight in 20msec
+              }
+
+              function moveLeft() {
+                 imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
+                 animate = setTimeout(moveLeft,20);    // call moveRight in 20msec
+              }
+
+              function stop() {
+                 clearTimeout(animate);
+                 imgObj.style.left = '500px'; 
+              }
+              
+              window.onload = init;
+           //-->
+        </script>
+</head>
+
+<body>
+<h1>Javascript Animation</h1>
+<p>For this weeks blog I wanted to play around with java script specifically what animations were possible. Css animations were very barebones and a bit tricky to work with. Looking 
+    at java script animations it is more like the functional and object oriented coding we have done before than what what CSS is like. I decided to do a simple one just to get a better
+    feel for what the animations were like. I decided to make a few methods to move an object, in this case a picture around the screen. The biggest key to this animation is creating an 
+    object that is moveable in this case it is created as a var called imgObj and set to null at the start of the script.
+</p>
+
+<p>
+    The true way that this animation works is by java scripts way of munipulating an object in this case a picture as we have already said before. Javascript allows for somethings location
+    on screen to be changed by obtaining the objects location using a parse int method that is already in the base library. Next we tell the object how much we want it to move per pixels on the screen.
+    We also set a Timeout for each of the movement functions so that there is a little bit of time before they start. Inorder to actually stop this animation you can set it to stop after a while
+    but, in this case we created a stop function that clears the timeout already given to the image. We can also reset the pictures location by just putting a certain pixel value to the .left
+    attribute in the object.
+</p>
+
+<p>
+    <pre>
+    var imgObj = null;
+    var animate ;
+    
+    function init() {
+       imgObj = document.getElementById('myImage');
+       imgObj.style.position= 'relative'; 
+       imgObj.style.left = '500px'; 
+    }
+    function moveRight() {
+       imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+       animate = setTimeout(moveRight,20);    // call moveRight in 20msec
+    }
+
+    function moveLeft() {
+       imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
+       animate = setTimeout(moveLeft,20);    // call moveRight in 20msec
+    }
+
+    function stop() {
+       clearTimeout(animate);
+       imgObj.style.left = '500px'; 
+    }
+    
+    window.onload = init;
+    </pre>
+</p>
+
+<form>
+    <img id = "myImage" src = "https://cdn.pixabay.com/photo/2016/11/01/20/41/firetruck-1789560__340.pngf" width="20%">
+    <p>Click the buttons below to handle animation</p>
+    <input type = "button" value = "Move Right" onclick = "moveRight();" />
+    <input type = "button" value = "Move Left" onclick = "moveLeft();" />
+    <input type = "button" value = "Stop" onclick = "stop();" />
+</form> 
+
+
+<h2>Sources</h2>
+<p>
+    <a href="https://www.tutorialspoint.com/javascript/javascript_animation.htm">Animation Examples</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt">parse Int Explination</a>
+</p>
+
+</body>
+</html>

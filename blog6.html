@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <title>Blog 6: Cursor Stuff</title> 
+
+    <script language="Javascript">
+	    function change_cursor() {
+		    document.body.style.cursor = document.getElementById('example-cursor').options[document.getElementById('example-cursor').selectedIndex].value;
+	    }
+        function random_cursor() {
+            var options = ["crosshair", "e-resize", "text", "progress", "pointer", "grab", "grabbing", "no-drop"];
+            var random = getRandomInt(8);
+            console.log(random);
+		    document.body.style.cursor = options[random];
+	    }
+	    function restore_cursor() {
+		    document.body.style.cursor = 'default';
+	    }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+    </script>
+</head>
+
+<body>
+<h1>Javascript Animation</h1>
+<p>
+    This week blog I wanted to play around with the cursor since it is such an important part of the user experience with in a website. After looking around I found a few things I wanted to try out
+    one of the is chaning the cursor icon which ulilizes object properties and specifically the document.cursor aspects which Javascript already holds. Javascript also holds many differnt
+    cursor icons for the developer to use like the loading hour glass, a pointer hand, and the resize icon when people resize the window from the corner. Change the icon for a cursor is extremly
+    simple with all that is needed is to change the .cursor property in a script uppon a button press or another event within the webpage.
+</p>
+
+<p>
+    To be able to change multiple cursors we need to set up an array of options that corresponds to the differnt options that the cursor can be changed to. 
+    Next we need to create the functions that will set will chanage the .cursor property of the document to what has been selected in the in the form. To do this we just set
+    .cursor to equal what the element value is from the index in the array. We then attach the java script function that changes the icon to a button and populate the on click property for it.
+</p>
+
+<select id="example-cursor">
+	<option>default</option>
+	<option>crosshair</option>
+	<option>e-resize</option>
+	<option>help</option>
+	<option>move</option>
+	<option>n-resize</option>
+	<option>ne-resize</option>
+	<option>nw-resize</option>
+	<option>pointer</option>
+	<option>progress</option>
+	<option>s-resize</option>
+	<option>se-resize</option>
+	<option>sw-resize</option>
+	<option>text</option>
+	<option>w-resize</option>
+	<option>wait</option>
+    <option>grabbing</option>
+    <option>not-allowed</option>
+</select>
+
+
+<form>
+    <p>Click the buttons below to change cursor</p>
+    <input type = "button" value = "Change Icon" onclick = "change_cursor();" />
+    <input type = "button" value = "Reset Cursor" onclick = "restore_cursor();" />
+    <input type = "button" value = "Random Cursor" onclick = "random_cursor();" />
+</form> 
+
+
+<h2>Sources</h2>
+<p>
+    <a href="https://electrictoolbox.com/change-cursor-javascript/">Changing Cursor Code</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor">Cursor API</a>
+</p>
+
+</body>
+</html>
